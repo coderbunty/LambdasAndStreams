@@ -1,0 +1,15 @@
+We use lambda expressions to create anonymous methods.
+Sometimes, however, a lambda expression does nothing but call an existing method.
+(receives the value & passes it as it is to the method as parameters)
+In these cases, it's often clearer to refer to the existing method by name.
+
+Method references enable us to do this; they are compact, easy-to-read lambda expressions
+for methods that already have a name.
+
+// numbers is a collection of Integers
+numbers.foreach(val -> System.out.println(val))
+numbers.foreach(System.out::println)    // using method reference in place of lambda expression
+
+Syntax:
+Class::methodName       // static or instance method
+object::methodName

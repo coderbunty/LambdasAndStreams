@@ -1,0 +1,38 @@
+A lambda expression is an anonymous function/methods.
+A function that doesn't have any name & doesn't belong to any class.
+
+Syntax:
+(parameter_list) -> {function_body}
+
+To use lambda expression, we need to either create our own functional interface
+or use the pre defined functional interface provided by Java.
+(functional interface - interface with only single abstract method)
+
+Explanation:
+
+Suppose we have parameters & we want to perform some operation on those parameters.
+And this is a one time operation, no need to create a separate function as we know
+it won't be reused again.
+For this lambda expression perfectly fits in.
+But, we cannot use lambdas just anywhere. If we intend to use lambdas somewhere, then
+that place should be expecting a object of a functional interface.
+For eg, thread creation expects a object of Runnable interface.
+
+If we are creating an API, then we can just create a functional interface & expect its
+object where we expect the client to use lambda expression.
+
+forEach() expects a object of Consumer<T> interface which has abstract accept(T).
+(This Consumer<T> functional interface represents an operation that accepts a
+single input argument and returns no result)
+In our lambda expression this accept() will act as our function which performs
+some operation on our parameter list.
+
+Lambda expressions must be glue code. Two lines may be too many.
+(http://blog.agiledeveloper.com/2015/06/lambdas-are-glue-code.html)
+
+Objects of functional interfaces or lambda expressions are expected with,
+- creation of threads (Runnable, Callable etc)
+- various APIs of Streams
+- event listeners
+- sort using a custom comparator (Comparator is a functional interface)
+etc
