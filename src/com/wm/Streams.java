@@ -118,7 +118,8 @@ public class Streams {
         // reduce() - reduction & terminal operation, takes a sequence of input elements & combines them into one
         //            by the repeated application of a combining operation.
         //            "T reduce(T identity, BinaryOperator<T> accumulator)"
-        //            identity is the starting value & accumulator is the binary operation we repeatedly perform.
+        //            identity is the identity value for respective operations & accumulator is the binary operation we repeatedly perform.
+        //             For eg, identity value for addition is 0 & for multiplication is 1.
         System.out.println(
                 numbers.stream()
                         .filter(e -> e % 2 == 0)
