@@ -1,0 +1,46 @@
+* In the imperative style the structure of sequential code is very different from the structure of concurrent code
+* When using streams, the structure of sequential code is same as the structure of concurrent code
+* (functional style of programming has less complexity in terms of coding & it is also easier to parallelize)
+* We use parallelStream() or parallel() to get the stream process the pipeline in parallel
+
+* using forEachOrdered() ensures ordering if the stream guarantees ordering
+* here if the stream is on a list which is a ordered DS, then stream has ordering & we can use forEachOrderedr to
+  maintain the same ordering.
+* using forEachOrdered, parallelism is still there but in order
+* meaning, for eg, 6th thread will not finish until 5th thread has finished executing
+* a static common thread pool, ForkJoinPool gets used by parallel streams to execute tasks in parallel
+* ForkJoinPool.commonPool()
+
+* How many threads should I create or ideally have in my pool?
+* We may have computation intensive or I/O intensive operations
+* for computation intensive operations,
+        # of threads <= # of cores on the system
+  This is because, if #threads exceeds the # cores, then we will lose performance as effort will also go in context
+  switches.
+* for I/O intensive operations,
+        # of threads may be > # of cores
+
+                          # cores
+    # threads <= ----------------------------,     0 <= blocking factor <= 1
+                     1 - blocking factor
+
+    blocking factor is the percentage of time the thread will be blocked for I/O
+
+    If blocking factor is 0, then it means its a computation intensive operation
+    If blocking factor is 50%, then #threads <= 2 * #cores
+
+* ForkJoinPool.commonPool() which is the thread pool used by default by parallel streams, the number of worker
+  threads in the pool are not more than (1 - #cores). Including main thread, we have #thread in the pool = #cores.
+
+  Number of cores on the system can be checked using Runtime.getRuntime().availableProcessors().
+
+* If we don't want to have the default #threads in the pool, then we can override the number of threads value at JVM
+  level using the below flag,
+        java.util.concurrent.ForkJoinPool.common.parallelism = some new value
+  Doing this might not be a good idea. Running with increased number of threads (> #cores) might hamper performance.
+
+* Parallel always doesn't mean faster. Some pointers to look to go for parallelism are - if we have lot of objects on
+  which we need to do processing, if the tasks under hand are time consuming.
+
+  If the tasks are very fast executing then we may not get more performance out of parallelism because a lot of resources
+  may get wasted creating & managing threads than getting the work done.
