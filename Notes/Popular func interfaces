@@ -1,0 +1,19 @@
+Popular functional interfaces where lambda expressions are widely used
+
+
+Supplier<T>     -   T get()          -   factories  - doesn't take anything as argument, but returns value of type T
+
+Predicate<T>    -   boolean test(T)  -   filter     - takes in a input of type T, does some checking & returns a boolean
+
+Function<T, R>  -   R apply(T)       -   map        - transforms an input of type T to an output of type R
+
+Consumer<T>     -   void accept(T)   -   forEach    - it takes in data & consumes (some operation) it, doesn't return anything
+
+
+
+Supplier<T> interface is also used in places where a sub task needs to be submitted for running.
+Like Runnable or Callable<T> interface. Both these interfaces, like Supplier, doesn't take any input.
+Supplier & Callable interface abstract method returns a value of type T.
+() -> func()    --      func() will be the code which will run in thread, & func() will return a value after execution.
+
+
