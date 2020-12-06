@@ -1,11 +1,13 @@
 package com.wm;
 
+import com.practice.Test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import com.wm.Person.*;
@@ -14,7 +16,7 @@ public class Streams {
 
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
-
+        // sum of twice of all the even numbers in floating point form
         System.out.println(
             numbers.stream()
                     .filter(e -> e % 2 == 0)    // filters out odd numbers from the stream
@@ -174,5 +176,47 @@ public class Streams {
                       .limit(n)
                       .sum()
         );
+
+
+
+
+
+
+
+
+
+
+
+        // Some exercises
+        List<Integer> intNums = Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        // sum of twice of all the even numbers
+        System.out.println(
+          intNums.stream()
+                 .filter(i -> i % 2 == 0)
+                 .map(i -> i * 2)
+                 .reduce(0, (carry, i) -> carry + i)
+        );
+
+        // check if a number is prime
+        System.out.println(isPrime(4));
+
+        // print all primes till 100
+        IntStream.range(2, 100)
+                 .filter(Streams::isPrime)
+                 .forEach(System.out::println);
+
+        // get all odd numbers greater than 5 in a set of strings
+        Set<String> set = intNums.stream()
+                                 .filter(i -> i % 2 == 1)
+                                 .filter(i -> i > 5)
+                                 .map(String::valueOf)
+                                 .collect(Collectors.toSet());
+        set.forEach(System.out::println);
+      }
+
+    private static boolean isPrime(int num) {
+      return !(IntStream.range(2, num / 2 + 1)
+                        .filter(i -> num % i == 0)
+                        .count() >= 1);
     }
 }
