@@ -1,0 +1,20 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(…³­çúÿÿÿÿ
+T
+java:S1854"9Remove this useless assignment to local variable "task1".(úêääúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(í Âõøÿÿÿÿ
+>
+java:S1604"(Make this anonymous inner class a lambda(Çîè
+G
+java:S1602",Remove useless curly braces around statement(úêääúÿÿÿÿ
+Q	java:S125!"<This block of commented-out lines of code should be removed.(Ü’ÒÆ
+E
+java:S1481"*Remove this unused "task1" local variable.(úêääúÿÿÿÿ
+G
+java:S1612"",Replace this lambda with a method reference.(š†á´ûÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(š†á´ûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(˜ÉäÅ
+T
+java:S1854"9Remove this useless assignment to local variable "task2".(«Ê°Óûÿÿÿÿ
+E
+java:S1481"*Remove this unused "task2" local variable.(«Ê°Óûÿÿÿÿ

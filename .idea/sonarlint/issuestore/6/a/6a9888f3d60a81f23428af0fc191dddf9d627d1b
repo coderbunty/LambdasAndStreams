@@ -1,0 +1,27 @@
+
+B
+java:S16129",Replace this lambda with a method reference.(ïÎÄî
+G
+java:S3958M"2Refactor the code so this stream pipeline is used.(²É™.
+S	java:S106P"9Replace this use of System.out or System.err by a logger.(©ØªÖşÿÿÿÿ
+N	java:S1067"9Replace this use of System.out or System.err by a logger.(õéªí
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(„Ğàõ
+B
+java:S1612:",Replace this lambda with a method reference.(ÙóÊ
+G
+java:S1612H",Replace this lambda with a method reference.(—™˜òıÿÿÿÿ
+Q	java:S125)"<This block of commented-out lines of code should be removed.(ÆÀô
+\
+java:S2142T"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+V	java:S1251"<This block of commented-out lines of code should be removed.(£¿Õäùÿÿÿÿ
+B
+java:S1612.",Replace this lambda with a method reference.(ÙóÊ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¤Í†â
+B
+java:S1612G",Replace this lambda with a method reference.(ïÎÄî
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(«ğÑÜüÿÿÿÿ
+\
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+B
+java:S1612-",Replace this lambda with a method reference.(ïÎÄî
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(¢û„õ
